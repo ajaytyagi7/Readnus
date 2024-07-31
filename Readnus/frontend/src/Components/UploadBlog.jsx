@@ -1,18 +1,19 @@
-import React from 'react'
+import React,{useState} from 'react'
 import MDEditor from '@uiw/react-md-editor';
 import { useFormik } from 'formik'
 import { enqueueSnackbar } from 'notistack'
 
 
 const UploadBlog = () => {
-    const [desc, setDesc] = React.useState('');
+    const [desc, setDesc] = React.useState(''); 
 
+    const [selFile, setSelFile] = useState('');
+    
     const BlogForm = useFormik({
         initialValues: {
             title: '',
-            date:'',
+            description: '',
             details:'',
-            
 
 
         },
@@ -30,7 +31,7 @@ const UploadBlog = () => {
 
             const data = await res.json();
             if (res.status == 200) {
-                enqueueSnackbar(' Blog Post Successfully', { variant: 'success' })
+                enqueueSnackbar(' Story Post Successfully', { variant: 'success' })
             } else if (res.status == 401) {
                 enqueueSnackbar('Invalid Post ', { variant: 'error' })
             } else {
@@ -43,6 +44,21 @@ const UploadBlog = () => {
 
        
     });
+
+    const uploadFile = (e) => {
+        const file = e.target.files[0];
+        setSelFile(file.name);
+        const fd = new FormData();
+        fd.append("myfile", file);
+        fetch("http://localhost:5000/util/uploadfile", {
+            method: "POST",
+            body: fd,
+        }).then((res) => {
+            if (res.status === 200) {
+                console.log("file uploads");
+            }
+        });
+    };
   return (
     <div className='bg-secondary-subtle'>
         <div className=''>
@@ -50,9 +66,9 @@ const UploadBlog = () => {
                 <div className="card p-5">
                     <div className="card-body">
                         <h1 className=' text-4xl font-bold text-center mb-2'>Blog</h1><hr />
-                        <form onChange={BlogForm.handleSubmit} >
-                        <input type="text" className='form-control mb-3 mt-5 p-3' id='title' placeholder='Enter Title..' onChange={BlogForm.handleChange} value={BlogForm.values.title}/>
-                        <input type="date" className='form-control mb-3 p-3' placeholder='Enter Date' id='date' onChange={BlogForm.handleChange} value={BlogForm.values.date} />
+                        <form onSubmit={BlogForm.handleSubmit} >
+                        <input type="text" className='form-control mb-3 mt-5 p-3' id='title' placeholder='Enter Title..' onChange={BlogForm.handleChange} value={BlogForm.values.title}  />
+                        <input type="date" className='form-control mb-3 p-3' placeholder='Enter Date' id='date'  onChange={BlogForm.handleChange} value={BlogForm.values.date} />
                         <label className='text-2xl font-semibold' htmlFor="">Enter Details</label>
                         <MDEditor
                             value={desc}
@@ -60,6 +76,7 @@ const UploadBlog = () => {
                             plzceholder='Enter detalis'
                             className='bg-white text-black mt-3 mb-3'
                          />
+                        <input type="file" className='form-control mb-3 p-3' id='image' onChange={uploadFile} />
                          <button className='p-3 bg-pink-600 w-100 font-semibold mt-3'>Submit</button>
 
 

@@ -5,7 +5,7 @@ const BlogDetails = () => {
     const [blogDetails, setblogDetails] = useState([])
 
     const fetchblogDetalis=async() =>{
-        const res=await fetch('http://localhost:5000/write/getall')
+        const res=await fetch('http://localhost:5000/blog/getall')
         console.log(res.status);
 
         const data= await res.json();
@@ -24,9 +24,9 @@ const BlogDetails = () => {
                 blogDetails.map((item)=>{
                     return (<div className='py-5'>
                         <img className='img-fluid mx-auto ' src="https://miro.medium.com/v2/resize:fit:828/format:webp/0*vt6qfWOkoSe8yRBV" alt="" />
-                        <h1 className='mt-5 text-3xl font-semibold mb-3 text-center'>Title</h1>
-                        <p>date</p>
-                        <h1 className='mt-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quidem labore quia, harum ut eos exercitationem illo velit? Blanditiis, veniam? Rerum nam cum illo incidunt consectetur amet sit reiciendis alias.</h1>
+                        <h1 className='mt-5 text-3xl font-semibold mb-3 text-center'>{item.title}</h1>
+                        <p>{item.date}</p>
+                        <h1 className='mt-3'>{item.details}</h1>
                     </div>)
                 })
             }

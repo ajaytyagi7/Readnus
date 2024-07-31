@@ -42,6 +42,8 @@ const Signup = () => {
     
           if (res.status == 200) {
             enqueueSnackbar('Register Successfuly ', { variant: 'success' });
+          } else if (res.status == 401) {
+            enqueueSnackbar('Invalid Email', { variant: 'error' });
            
           } else {
             enqueueSnackbar('Something went wrong', { variant: 'error' });

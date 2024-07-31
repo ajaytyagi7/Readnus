@@ -6,12 +6,15 @@ import { enqueueSnackbar } from 'notistack'
 
 const Write = () => {
     const [desc, setDesc] = React.useState('');
+
+    const [selFile, setSelFile] = useState('');
     
     const WriteForm = useFormik({
         initialValues: {
             title: '',
             description: '',
             story:'',
+            image:'',
 
 
         },
@@ -42,6 +45,21 @@ const Write = () => {
 
        
     });
+
+    const uploadFile = (e) => {
+        const file = e.target.files[0];
+        setSelFile(file.name);
+        const fd = new FormData();
+        fd.append("myfile", file);
+        fetch("http://localhost:5000/util/uploadfile", {
+            method: "POST",
+            body: fd,
+        }).then((res) => {
+            if (res.status === 200) {
+                console.log("file uploads");
+            }
+        });
+    };
   return (
     <div className='container-fluid bg-secondary-subtle '>
         <div>
@@ -50,10 +68,12 @@ const Write = () => {
                     <div className="card-body">
                         <form onSubmit={WriteForm.handleSubmit}>
                         <h1 className='text-4xl font-semibold text-center mb-3'>Write</h1><hr />
+                        <label className='text-2xl mt-5' htmlFor="">Upload Image</label>
+                        <input type="file" className='form-control mb-3 p-3' id='image' onChange={uploadFile} />
                         <label className='text-2xl ' htmlFor="">Title</label>
-                        <input type="text" className='form-control mb-3 ' placeholder='Enter Title' id='title' onChange={WriteForm.handleChange} value={WriteForm.values.title} />
+                        <input type="text" className='form-control mb-3 p-3' placeholder='Enter Title' id='title' onChange={WriteForm.handleChange} value={WriteForm.values.title} />
                         <label className='text-2xl ' htmlFor="">  Description</label>
-                        <input type="text" className='form-control mb-3' placeholder='Enter Description' id='description' onChange={WriteForm.handleChange} value={WriteForm.values.description} />
+                        <input type="text" className='form-control mb-3 p-3' placeholder='Enter Description' id='description' onChange={WriteForm.handleChange} value={WriteForm.values.description} />
                         <label className='text-2xl ' htmlFor="">Tell Story</label>
                         
 

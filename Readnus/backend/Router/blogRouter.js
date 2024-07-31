@@ -1,6 +1,7 @@
 const express = require('express');
 const Model = require('../Model/blogModel');
 
+
 const router=express.Router();
 
 router.post('/add',(req,res) =>{

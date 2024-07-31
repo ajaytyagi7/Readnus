@@ -25,13 +25,11 @@ const List = () => {
         <div className="row p-5">
             <div className="col-md-8 ">
             <div className="card p-4">
-                <div className='row'>
-                    {storyList.map((item)=>{
-                        return( <div className="col-md-9">
+            {storyList.map((item)=>{
+                return( <div className='row'>
+                   
+                         <div className="col-md-9">
                             <div className="row">
-                            <div className="col-md-1 ">
-                                <img className='img-fluid h-8 w-8 rounded-full ' src="https://miro.medium.com/v2/resize:fit:828/format:webp/0*vt6qfWOkoSe8yRBV" alt="" />
-                            </div>
                             <div className="col-md-11 mt-1">
                                 <h1>Ajay Kumar Tyagi</h1>
                             </div>
@@ -44,13 +42,12 @@ const List = () => {
                         </div>
                         <button className='bg-cyan-500 rounded-3xl mb-3 w-28 mt-3 p-2 '>Read</button>
                         <hr />
-                    </div>)
-                    })}
-               
-                <div className="col-md-3">
-                    <img className='img-fluid' src="https://miro.medium.com/v2/resize:fit:828/format:webp/0*vt6qfWOkoSe8yRBV" alt="" />
-                </div>
-                </div>
+                    </div>
+                         <div className="col-md-3">
+                            <img className='img-fluid' src={'http://localhost:5000/' + item.image}alt="" />
+                        </div>
+                </div>)
+                })}
             
             </div>
             </div>

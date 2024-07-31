@@ -2,6 +2,7 @@ import React from 'react'
 import * as Yup from 'yup';
 import {  useFormik } from 'formik';
 import {  enqueueSnackbar } from 'notistack';
+import useUserContext from '../UserContext';
 
 const SigninSchema=Yup.object().shape({
     email:Yup.string().email('Invalid Email').required('Password Require'),
@@ -9,6 +10,9 @@ const SigninSchema=Yup.object().shape({
   });
 
 const Signin = () => {
+
+    //  const { setuserloggedIn } = useUserContext();
+
     const signinform=useFormik({
         initialValues:{
           password:"",
@@ -31,6 +35,7 @@ const Signin = () => {
           if(res.status==200){
             enqueueSnackbar('Signed in successfully' ,{variant:'success'});
             sessionStorage.setItem('user', JSON.stringify(data));
+            // setuserloggedIn(true);
             // navigate('/')
 
           }else if(res.status==401){

@@ -35,17 +35,17 @@ useEffect(()=>{
               return (<div className="shadow p-3 ">
                 <div className="card-body">
                   <div>
-                    <img className='img-fluid' src="https://miro.medium.com/v2/resize:fit:828/format:webp/0*vt6qfWOkoSe8yRBV" alt="" />
+                    <img className='img-fluid' src={'http://localhost:5000/' + item.image} alt="" />
                   </div>
-                  <h1 className='text-2xl font-semibold'>Title</h1>
-                  <p>Date of Post</p>
+                  <h1 className='text-2xl font-semibold'>{item.title}</h1>
+                  <p>{item.date}</p>
                 </div>
               </div>)
             })
           }
         </div>
      </div>
-    </div>
+    </div>  
   )
 }
 

@@ -1,69 +1,70 @@
-import React, { useState,useEffect } from 'react'
-import { enqueueSnackbar } from 'notistack'
-import { table } from '@uiw/react-md-editor'
+import React, { useEffect, useState } from 'react';
+import { enqueueSnackbar } from 'notistack';
 
 const ManageuserData = () => {
-    const [userList, setuserList] = useState([])
+  const [userList, setuserList] = useState([]);
 
-    const fetchuserdata=async() =>{
-        const res=await fetch('http//localhost:5000/user/getall')
-        console.log(res.status);
+  const fetchuserdata = async () => {
+    const res = await fetch('http://localhost:5000/user/getall');
+    const data = await res.json();
+    setuserList(data);
+  };
 
-        const data= await res.json();
-        console.log(data);
- 
-        setuserList(data);
+  useEffect(() => {
+    fetchuserdata();
+  }, []);
+
+  const deleteuserData = async (id) => {
+    const res = await fetch('http://localhost:5000/user/getbyid/'+ id, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    const data = await res.json();
+    console.log(data);
+    fetchuserdata();
+
+    if (res.status === 200) {
+      enqueueSnackbar('Deleted Successfully', { variant: 'success' });
+    } else {
+      enqueueSnackbar('Something went wrong', { variant: 'error' });
     }
+  };
 
-    useEffect(()=>{
-        fetchuserdata();
-    },[]);
-
-    const deleteuserData=async( id) =>{
-        const res=await fetch('http//localhost:5000/user/getbyid'+id,{
-            method:'DELETE',
-            headers:{
-                'Content-Type':'application/json'
-            }
-        });
-        const data=await res.json();
-        console.log(data);
-        fetchuserdata();
-
-        if(res.status==200){
-            enqueueSnackbar('Deleted Successfully',{variant:'success'});
-        }else{
-                enqueueSnackbar('Some thing went wrong',{variant:'error'})
-            }
-    }
-
-    const displayuserData=()=>{
-        return <table className='table table-secondary'>
-            <thead>
-                <tr>
-                    <th>Name </th>  
-                    <th>Email </th>  
-
-
-                </tr>
-            </thead>
-            <tbody>
-                {
-                    userList.map((item)=>{
-                        return <tr>
-                            <td>Ajay</td>
-                        </tr>
-                    })
-                }
-            </tbody>
-        </table>
-    }
+  const displayuserData = () => {
+    return (
+      <table className='table table-primary'>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Delete Data</th>
+          </tr>
+        </thead>
+        <tbody>
+          {userList.map((item) => (
+            <tr key={item._id}>
+              <td>{item.name}</td>
+              <td>{item.email}</td>
+              <td>
+                <button className='bg-pink-500 p-2 w-24' onClick={() => deleteuserData(item._id)}>Delete</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    );
+  };
 
   return (
     <div>
-        {displayuserData()}
-    </div>
-  )
-}
+      <div className="col-md-9 mx-auto py-3">
+      {displayuserData()}
 
-export default ManageuserData
+      </div>
+    </div>
+  );
+};
+
+export default ManageuserData;

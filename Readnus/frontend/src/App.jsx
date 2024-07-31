@@ -13,6 +13,9 @@ import ManageuserData from './Components/ManageuserData'
 import ManageStory from './Components/ManageStory'
 import UploadBlog from './Components/UploadBlog'
 import BlogDetails from './Components/BlogDetails'
+import Payment from './Components/Payment'
+import Admin from './Components/Admin'
+import ManageBlog from './Components/ManageBlog'
 
 function App() {
 
@@ -32,9 +35,14 @@ function App() {
       <Route path='Blog' element={<Blog/>}/>
       <Route path='UploadBlog' element={<UploadBlog/>}/>
       <Route path='BlogDetails' element={<BlogDetails/>}/>
+      <Route path='Payment' element={<Payment/>}/>
+      <Route path='Admin' element={<Admin/>}/>
+
+
 
       <Route path='ManageuserData' element={<ManageuserData/>}/>
       <Route path='ManageStory' element={<ManageStory/>}/>
+      <Route path='ManageBlog' element={<ManageBlog/>}/>
 
 
 
