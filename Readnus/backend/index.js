@@ -3,6 +3,7 @@ const express = require('express');
 const UserRouter = require('./Router/userRouter');
 const WriteRouter = require('./Router/writeRouter');
 const BlogRouter = require('./Router/blogRouter');
+
 const utilRouter = require('./Router/util');
 const paymentRouter = require('./Router/paymentRouter');
 const razorpay=require('razorpay');
@@ -26,9 +27,9 @@ app.use(cors({
 
 app.use('/user',UserRouter);
 app.use('/write',WriteRouter);
-app.use('/blog',BlogRouter);
 app.use('/util', utilRouter);
 app.use('/payment',paymentRouter);
+app.use('/blog',BlogRouter);
 app.use(express.static('./uploads'));
 
 

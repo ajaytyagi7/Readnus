@@ -23,7 +23,7 @@ const Details = () => {
             storyDetail.map((item)=>{
                 return(
                     <div className="col-md-10 mx-auto ">
-                        <img className='mx-auto ' src="https://miro.medium.com/v2/resize:fit:828/format:webp/0*vt6qfWOkoSe8yRBV" alt="" />
+                        <img className='mx-auto ' src={'http://localhost:5000/' + item.image} alt="" />
                         <h1 className='text-3xl text-center font-semibold py-4'>{item.title}</h1>
                         <h1>{item.story}</h1>
                     </div>

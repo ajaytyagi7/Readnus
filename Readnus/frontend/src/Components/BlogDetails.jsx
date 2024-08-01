@@ -23,7 +23,7 @@ const BlogDetails = () => {
             {
                 blogDetails.map((item)=>{
                     return (<div className='py-5'>
-                        <img className='img-fluid mx-auto ' src="https://miro.medium.com/v2/resize:fit:828/format:webp/0*vt6qfWOkoSe8yRBV" alt="" />
+                        <img className='img-fluid mx-auto ' src={'http://localhost:5000/' + item.image} alt="" />
                         <h1 className='mt-5 text-3xl font-semibold mb-3 text-center'>{item.title}</h1>
                         <p>{item.date}</p>
                         <h1 className='mt-3'>{item.details}</h1>
@@ -36,3 +36,4 @@ const BlogDetails = () => {
 }
 
 export default BlogDetails
+

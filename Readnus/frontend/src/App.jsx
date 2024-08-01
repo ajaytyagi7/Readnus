@@ -16,6 +16,8 @@ import BlogDetails from './Components/BlogDetails'
 import Payment from './Components/Payment'
 import Admin from './Components/Admin'
 import ManageBlog from './Components/ManageBlog'
+import Footer from './Components/Footer'
+import { UserProvider } from "./UserContext";
 
 function App() {
 
@@ -23,6 +25,7 @@ function App() {
     <>
     <SnackbarProvider maxSnack={3} anchorOrigin={{ vertical: 'top', horizontal: 'right' }} >
     <BrowserRouter>
+    <UserProvider>
     <Navbar/>
     <Routes>
        <Route path='/' element={<Home/>}/>
@@ -40,6 +43,7 @@ function App() {
 
 
 
+
       <Route path='ManageuserData' element={<ManageuserData/>}/>
       <Route path='ManageStory' element={<ManageStory/>}/>
       <Route path='ManageBlog' element={<ManageBlog/>}/>
@@ -52,6 +56,8 @@ function App() {
 
 
     </Routes>
+    <Footer/>
+    </UserProvider>
     </BrowserRouter>
     </SnackbarProvider>
     </>

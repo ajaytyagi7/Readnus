@@ -15,17 +15,14 @@ export const UserProvider = ({ children }) => {
     const Logout = () => {
         sessionStorage.removeItem('user');
         navigate('/Home');
-        enqueueSnackbar('Loged Out Successfully ', { variant: 'success' });
+        enqueueSnackbar(' ', { variant: 'success' });
         setuserloggedIn(false);
     }
-
-    
 
     return <UserContext.Provider value={{ currentUser, setCurrentUser, userloggedIn, setuserloggedIn, Logout }}>
         {children}
     </UserContext.Provider>
 };
 
-const useUserContext = () => useContext(UserContext);
+export const useUserContext = () => useContext(UserContext);
 
-export default useUserContext;

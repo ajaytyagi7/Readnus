@@ -1,7 +1,8 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import MDEditor from '@uiw/react-md-editor';
 import { useFormik } from 'formik'
 import { enqueueSnackbar } from 'notistack'
+import axios from 'axios';
 
 
 const UploadBlog = () => {
@@ -12,7 +13,7 @@ const UploadBlog = () => {
     const BlogForm = useFormik({
         initialValues: {
             title: '',
-            description: '',
+            date: '',
             details:'',
 
 
@@ -31,19 +32,19 @@ const UploadBlog = () => {
 
             const data = await res.json();
             if (res.status == 200) {
-                enqueueSnackbar(' Story Post Successfully', { variant: 'success' })
+                enqueueSnackbar(' Blog Post Successfully', { variant: 'success' })
             } else if (res.status == 401) {
                 enqueueSnackbar('Invalid Post ', { variant: 'error' })
             } else {
                 enqueueSnackbar('Something went wrong', { variant: 'error' })
             }
+        }
 
-
-
-        },
 
        
     });
+    
+    
 
     const uploadFile = (e) => {
         const file = e.target.files[0];

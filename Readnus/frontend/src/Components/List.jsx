@@ -18,10 +18,6 @@ const List = () => {
 
   return (
     <div className='container-fluid bg-secondary-subtle'>
-        <div className='py-4   mx-80 input-group'>
-            <input type="text" className='p-2 border border-dark  w-50' placeholder='Search..' />
-            <button className='bg-pink-500 p-2  border border-dark'>Search</button>
-        </div>
         <div className="row p-5">
             <div className="col-md-8 ">
             <div className="card p-4">

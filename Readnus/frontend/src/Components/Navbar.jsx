@@ -1,9 +1,30 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import useUserContext from '../UserContext';
+import {useUserContext } from '../UserContext';
 
 const Navbar = () => {
+  const {userloggedIn,Logout} = useUserContext();
+
+  const showLoginOptions = () => {
+    if (userloggedIn) {
+      return (
+        <button onClick={Logout} className="text-white bg-gradient-to-r from-orange-200 to-sky-700 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 py-2 text-sm fs-5 mt-4">Logout</button>
+      )
+    } else {
+      return <>
+
+        <NavLink
+          to="/Signin"
+          className=" hover:text-white rounded-md px-3 py-2 text-sm fs-5 mt-4"
+        >
+          <button className='text-white bg-gradient-to-r from-fuchsia-700 to-sky-700 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 py-2 text-sm fs-5 mt-4'>SignIN</button>
+        </NavLink>
+
+
+      </>
+    }
+  }
   return (
     <div>
         <nav className="bg-secondary-subtle ">
@@ -29,31 +50,20 @@ const Navbar = () => {
         </div>
         <div className="hidden sm:ml-6 sm:block">
           <div className="flex space-x-4">
-            <a href="Home" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-blue-400 hover: text-dark " aria-current="page">Home</a>
-            <a href="#" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-blue-400 hover: text-dark">Our Story</a>
+            <NavLink to={'/Home'}  className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-blue-400 hover: text-dark " aria-current="page">Home</NavLink>
+            <NavLink  to={'/List'}  className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-blue-400 hover: text-dark">Story</NavLink>
 
-            <a href="#" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-blue-400 hover: text-dark">Membership</a>
-            <a href="Write" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-blue-400 hover: text-dark">Write</a>
-            <a href="Signin" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-blue-400 hover: text-dark">Sign IN</a>
+            <NavLink to={'/Payment'}  className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-blue-400 hover: text-dark">Membership</NavLink>
+            <NavLink to={'/Blog'}  className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-blue-400 hover: text-dark">Blog</NavLink>
           </div>
         </div>
       </div>
       <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-        <button type="button" className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-          <span className="absolute -inset-1.5"></span>
-          <span className="sr-only">View notifications</span>
-          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
-          </svg>
-        </button>
+       
 
-        <div className="relative ml-3">
+        <div className="relative ">
           <div>
-            <button type="button" className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-              <span className="absolute -inset-1.5"></span>
-              <span className="sr-only">Open user menu</span>
-              <img className="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt=""/>
-            </button>
+            {showLoginOptions()}
           </div>
 
        
@@ -63,14 +73,7 @@ const Navbar = () => {
     </div>
   </div>
 
-  <div className="sm:hidden" id="mobile-menu">
-    <div className="space-y-1 px-2 pb-3 pt-2">
-      <a href="#" className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Dashboard</a>
-      <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
-      <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
-      <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
-    </div>
-  </div>
+  
 </nav>
 
     </div>
