@@ -103,7 +103,6 @@ event.preventDefault();
           </div>
         </div>
       </div>
-      <h1>Payment Gateway</h1>
     </div>
   )
 }

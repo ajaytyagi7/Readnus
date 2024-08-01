@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const Blog = () => {
@@ -20,13 +21,13 @@ const Blog = () => {
   const displayBlogData = () => {
     return blogList.map((item) => (
       <div key={item._id} className="shadow p-3 col-md-3">
-        <div className="card-body">
+       <Link to={'/BlogDetails'}> <div className="card-body">
           <div>
             <img className='img-fluid' src={'http://localhost:5000/' + item.image} alt={item.title} />
           </div>
           <h1 className='text-2xl font-semibold'>{item.title}</h1>
           <p>{new Date(item.date).toLocaleDateString()}</p>
-        </div>
+        </div></Link>
       </div>
     ));
   };

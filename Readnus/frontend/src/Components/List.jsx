@@ -1,4 +1,5 @@
 import React , { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const List = () => {
     const [storyList, setstoryList] = useState([])
@@ -36,7 +37,7 @@ const List = () => {
                         <div>
                             <h1 className='text-2xl'>{item.description}</h1>
                         </div>
-                        <button className='bg-cyan-500 rounded-3xl mb-3 w-28 mt-3 p-2 '>Read</button>
+                       <Link to={'/Details'}> <button className='bg-cyan-500 rounded-3xl mb-3 w-28 mt-3 p-2 '>Read</button></Link>
                         <hr />
                     </div>
                          <div className="col-md-3">

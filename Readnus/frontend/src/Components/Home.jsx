@@ -18,8 +18,8 @@ const Home = () => {
           <div className="col-md-3 ">
             <div className="card shadow-2xl hover:bg-sky-400">
               <div className="card-body p-3">
-                <h1 className='text-4xl text-center font-semibold '>Topic</h1>
-                <h1 className='text-center mt-3'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum repellat commodi qui, in, facilis ipsum adipisci tempore pariatur amet libero, quasi impedit. Aliquam dolore excepturi doloremque officiis numquam? Dolorem unde reprehenderit quidem autem? Pariatur impedit numquam quis fugit odio delectus sit consequatur vitae possimus nam debitis, perspiciatis sunt a eligendi nobis voluptate! Eius cupiditate unde, et expedita voluptatum commodi ex eaque qui possimus, labore excepturi ut! Dolore eius iste cum! Quaerat enim, v
+                <h1 className='text-4xl text-center font-semibold '>Topic</h1><hr />
+                <h1 className='text-center mt-3 fs-5'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum repellat commodi qui, in, facilis ipsum adipisci tempore pariatur amet libero, quasi impedit. Aliquam dolore excepturi doloremque officiis numquam? Dolorem unde reprehenderit quidem autem? Pariatur impedit numquam quis fugit odio delectus sit consequatur vitae possimus 
                 </h1>
                 <h1 className='text-center bg-pink-500 mt-3 p-3 font-semibold'>Read More</h1>
               </div>
@@ -28,8 +28,8 @@ const Home = () => {
           <div className="col-md-3">
             <div className="card shadow-2xl">
               <div className="card-body p-3 hover:bg-sky-400">
-                <h1 className='text-4xl text-center font-semibold '>Topic</h1>
-                <h1 className='text-center mt-3'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum repellat commodi qui, in, facilis ipsum adipisci tempore pariatur amet libero, quasi impedit. Aliquam dolore excepturi doloremque officiis numquam? Dolorem unde reprehenderit quidem autem? Pariatur impedit numquam quis fugit odio delectus sit consequatur vitae possimus nam debitis, perspiciatis sunt a eligendi nobis voluptate! Eius cupiditate unde, et expedita voluptatum commodi ex eaque qui possimus, labore excepturi ut! Dolore eius iste cum! Quaerat enim, v
+                <h1 className='text-4xl text-center font-semibold '>Topic</h1><hr />
+                <h1 className='text-center mt-3 fs-5'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum repellat commodi qui, in, facilis ipsum adipisci tempore pariatur amet libero, quasi impedit. Aliquam dolore excepturi doloremque officiis numquam? Dolorem unde reprehenderit quidem autem? Pariatur impedit numquam quis fugit odio delectus sit consequatur vitae possimus 
                 </h1>
                 <h1 className='text-center bg-pink-500 mt-3 p-3 font-semibold'>Read More</h1>
               </div>
@@ -38,8 +38,8 @@ const Home = () => {
           <div className="col-md-3">
             <div className="card shadow-2xl">
               <div className="card-body p-3 hover:bg-sky-400" >
-                <h1 className='text-4xl text-center font-semibold '>Topic</h1>
-                <h1 className='text-center mt-3'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum repellat commodi qui, in, facilis ipsum adipisci tempore pariatur amet libero, quasi impedit. Aliquam dolore excepturi doloremque officiis numquam? Dolorem unde reprehenderit quidem autem? Pariatur impedit numquam quis fugit odio delectus sit consequatur vitae possimus nam debitis, perspiciatis sunt a eligendi nobis voluptate! Eius cupiditate unde, et expedita voluptatum commodi ex eaque qui possimus, labore excepturi ut! Dolore eius iste cum! Quaerat enim, v
+                <h1 className='text-4xl text-center font-semibold '>Topic</h1><hr />
+                <h1 className='text-center mt-3 fs-5'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum repellat commodi qui, in, facilis ipsum adipisci tempore pariatur amet libero, quasi impedit. Aliquam dolore excepturi doloremque officiis numquam? Dolorem unde reprehenderit quidem autem? Pariatur impedit numquam quis fugit odio delectus sit consequatur vitae possimus 
                 </h1>
                 <h1 className='text-center bg-pink-500 mt-3 p-3 font-semibold'>Read More</h1>
               </div>
@@ -48,8 +48,8 @@ const Home = () => {
           <div className="col-md-3">
             <div className="card shadow-2xl">
               <div className="card-body p-3 hover:bg-sky-400">
-                <h1 className='text-4xl text-center font-semibold '>Topic</h1>
-                <h1 className='text-center mt-3'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum repellat commodi qui, in, facilis ipsum adipisci tempore pariatur amet libero, quasi impedit. Aliquam dolore excepturi doloremque officiis numquam? Dolorem unde reprehenderit quidem autem? Pariatur impedit numquam quis fugit odio delectus sit consequatur vitae possimus nam debitis, perspiciatis sunt a eligendi nobis voluptate! Eius cupiditate unde, et expedita voluptatum commodi ex eaque qui possimus, labore excepturi ut! Dolore eius iste cum! Quaerat enim, v
+                <h1 className='text-4xl text-center font-semibold '>Topic</h1><hr />
+                <h1 className='text-center mt-3 fs-5'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum repellat commodi qui, in, facilis ipsum adipisci tempore pariatur amet libero, quasi impedit. Aliquam dolore excepturi doloremque officiis numquam? Dolorem unde reprehenderit quidem autem? Pariatur impedit numquam quis fugit odio delectus sit consequatur vitae possimus 
                 </h1>
                 <h1 className='text-center bg-pink-500 mt-3 p-3 font-semibold'>Read More</h1>
               </div>
