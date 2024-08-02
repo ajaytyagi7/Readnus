@@ -28,7 +28,7 @@ const List = () => {
                          <div className="col-md-9">
                             <div className="row">
                             <div className="col-md-11 mt-1">
-                                <h1>Ajay Kumar Tyagi</h1>
+                                <h1>Readnus</h1>
                             </div>
                         </div>
                         <div>
@@ -37,9 +37,10 @@ const List = () => {
                         <div>
                             <h1 className='text-2xl'>{item.description}</h1>
                         </div>
-                       <Link to={'/Details'}> <button className='bg-cyan-500 rounded-3xl mb-3 w-28 mt-3 p-2 '>Read</button></Link>
+                             <Link to={'/Details'}> <button className='bg-cyan-500 rounded-3xl mb-3 w-28 mt-3 p-2 '>Read</button></Link>
                         <hr />
-                    </div>
+                        </div>
+
                          <div className="col-md-3">
                             <img className='img-fluid' src={'http://localhost:5000/' + item.image}alt="" />
                         </div>

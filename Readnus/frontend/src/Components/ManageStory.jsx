@@ -6,7 +6,7 @@ const ManageStory = () => {
 
   const fetchStoryData = async () => {
     try {
-      const res = await fetch('http://localhost:5000/story/getall');
+      const res = await fetch('http://localhost:5000/write/getall');
       if (!res.ok) {
         throw new Error('Network response was not ok');
       }
@@ -28,7 +28,7 @@ const ManageStory = () => {
 
   const deleteStoryData = async (id) => {
     try {
-      const res = await fetch('http://localhost:5000/story/delete/' + id, {
+      const res = await fetch('http://localhost:5000/write/delete/' + id, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'
@@ -80,7 +80,7 @@ const ManageStory = () => {
   };
 
   return (
-    <div>
+    <div className='bg-secondary-subtle'>
         <div className='col-md-9 mx-auto py-3 '>
          {displayStoryData()}
 

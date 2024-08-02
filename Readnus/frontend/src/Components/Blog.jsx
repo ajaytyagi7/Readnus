@@ -18,19 +18,7 @@ const Blog = () => {
     fetchBlogData();
   }, []);
 
-  const displayBlogData = () => {
-    return blogList.map((item) => (
-      <div key={item._id} className="shadow p-3 col-md-3">
-       <Link to={'/BlogDetails'}> <div className="card-body">
-          <div>
-            <img className='img-fluid' src={'http://localhost:5000/' + item.image} alt={item.title} />
-          </div>
-          <h1 className='text-2xl font-semibold'>{item.title}</h1>
-          <p>{new Date(item.date).toLocaleDateString()}</p>
-        </div></Link>
-      </div>
-    ));
-  };
+ 
 
   return (
     <div>
@@ -43,7 +31,26 @@ const Blog = () => {
         </div>
       </header>
       <div>
-        {displayBlogData()}
+         <div className="container">
+          <div className="row">
+            {
+            blogList.map((item) =>{
+              return(<div className='col-md-3 mt-3'>
+                <Link to={'./BlogDetails'}>  <div className="card">
+                    <div className="card-body">
+                      <img className='img-fluid' src={'http://localhost:5000/' + item.image} alt="" />
+                      <h1 className='text-center text-2xl font-semibold'>{item.title}</h1>
+                    </div>
+                  </div>
+                  </Link>
+              </div>
+                
+              )
+            })
+        }
+          </div>
+         </div>
+        
       </div>
     </div>
   );
