@@ -34,10 +34,10 @@ function App() {
       <Route path='Signup' element={<Signup/>}/>
       <Route path='List' element={<List/>}/>
       <Route path='Write' element={<Write/>}/>
-      <Route path='Details' element={<Details/>}/>
+      <Route path='Details/:id' element={<Details/>}/>
       <Route path='Blog' element={<Blog/>}/>
       <Route path='UploadBlog' element={<UploadBlog/>}/>
-      <Route path='BlogDetails' element={<BlogDetails/>}/>
+      <Route path='BlogDetails/:id' element={<BlogDetails/>}/>
       <Route path='Payment' element={<Payment/>}/>
       <Route path='Admin' element={<Admin/>}/>
 

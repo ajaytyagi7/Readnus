@@ -3,6 +3,7 @@ import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { enqueueSnackbar } from 'notistack';
 import {useNavigate} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const SignupSchema = Yup.object().shape({
     name: Yup.string().required('Name is Required ').min(4, 'Name is too short'),
@@ -62,7 +63,7 @@ const Signup = () => {
       }
       );
   return (
-    <div className='signin  bg-secondary-subtle '>
+    <div className='bg-signup  bg-secondary-subtle '>
           <div className="col-md-4 mx-auto py-1">
             <div className="card mt-5 p-1 shadow ">
                 <div className="card-body p-4">
@@ -78,6 +79,10 @@ const Signup = () => {
                             <input type="password" className="form-control mb-3  p-3" id="confirm" placeholder="Confirm password" onChange={signForm.handleChange} value={signForm.values.confirm}  />
 
                             <button type="submit" className="bg-pink-500 p-3 w-100">Submit</button>
+                            <p className="text-center mt-3">Already Have a Register  <Link to={"/Signin"} className='text-primary'>Signin Now</Link></p>
+                            
+
+
                     </form>
                 </div>
             </div>

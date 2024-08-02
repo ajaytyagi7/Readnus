@@ -22,7 +22,7 @@ const Blog = () => {
 
   return (
     <div>
-      <header className='bg-stone-300'>
+      <header className='bg-blue-200'>
         <div className='p-16'>
           <h1 className='text-center text-5xl font-bold'>Welcome to our Blogs</h1>
           <h1 className='text-center mt-3 font-semibold'>
@@ -36,10 +36,13 @@ const Blog = () => {
             {
             blogList.map((item) =>{
               return(<div className='col-md-3 mt-3'>
-                <Link to={'./BlogDetails'}>  <div className="card">
+                <Link to={'/BlogDetails/'+ item._id}>  <div className="card p-3 h-52 mb-3 bg-slate-300 ">
                     <div className="card-body">
                       <img className='img-fluid' src={'http://localhost:5000/' + item.image} alt="" />
-                      <h1 className='text-center text-2xl font-semibold'>{item.title}</h1>
+
+                      <h1 className='text-center text-3xl font-semibold '>{item.title}</h1>
+                      <h1 className='text-center'>{item.date}</h1>
+                      <h1 className='mt-3'>{item.description}</h1>
                     </div>
                   </div>
                   </Link>

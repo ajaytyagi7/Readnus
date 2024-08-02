@@ -15,7 +15,7 @@ const ManageuserData = () => {
   }, []);
 
   const deleteuserData = async (id) => {
-    const res = await fetch('http://localhost:5000/user/getbyid/'+ id, {
+    const res = await fetch('http://localhost:5000/user/delete/'+ id, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'
@@ -58,7 +58,7 @@ const ManageuserData = () => {
   };
 
   return (
-    <div>
+    <div className='container-fluid'>
       <div className="col-md-9 mx-auto py-3">
       {displayuserData()}
 

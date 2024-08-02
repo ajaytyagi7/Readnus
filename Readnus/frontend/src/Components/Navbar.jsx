@@ -2,79 +2,103 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import {useUserContext } from '../UserContext';
+import { useState } from 'react';
+import { FaTimes } from "react-icons/fa";
+import { CiMenuBurger } from "react-icons/ci";
+
+
 
 const Navbar = () => {
   const {userloggedIn,Logout} = useUserContext();
 
-  const showLoginOptions = () => {
+  const [click, setclick] = useState(false);
+  
+
+  const closeNav = () => {
+    setclick(false)
+  };
+
+
+  const handleClick = () => {
+    setclick(!click);
+  }
+
+  const showSignin = () => {
     if (userloggedIn) {
       return (
-        <button onClick={Logout} className="text-white bg-gradient-to-r from-orange-200 to-sky-700 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 py-2 text-sm fs-5 mt-4">Logout</button>
+        <button onClick={Logout} className="text-white bg-gradient-to-r from-orange-200 to-sky-700 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 py-2 text-sm fs-5 ">Logout</button>
       )
-    } else {
+    } else {   
       return <>
 
         <NavLink
           to="/Signin"
-          className=" hover:text-white rounded-md px-3 py-2 text-sm fs-5 mt-4"
+          className=" hover:text-white rounded-md px-3  text-sm fs-5"
         >
-          <button className='text-white bg-gradient-to-r from-fuchsia-700 to-sky-700 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 py-2 text-sm fs-5 mt-4'>SignIN</button>
+          <button onClick={closeNav} className='text-white bg-gradient-to-r from-fuchsia-700 to-sky-700 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2  text-sm fs-5 '>SignIN</button>
         </NavLink>
 
 
       </>
     }
   }
-  return (
-    <div>
-        <nav className="bg-secondary-subtle ">
-  <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-    <div className="relative flex h-16 items-center justify-between">
-      <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-        <button type="button" className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-          <span className="absolute -inset-0.5"></span>
-          <span className="sr-only">Open main menu</span>
-        
-          <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-        
-          <svg className="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-      <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-        <div className="flex flex-shrink-0 items-center">
-          <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company"/>
-        </div>
-        <div className="hidden sm:ml-6 sm:block">
-          <div className="flex space-x-4">
-            <NavLink to={'/Home'}  className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-blue-400 hover: text-dark " aria-current="page">Home</NavLink>
-            <NavLink  to={'/List'}  className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-blue-400 hover: text-dark">Story</NavLink>
+  const content = <>
+  <div className="lg:hidden block absolute top-20 w-full left-0 right-0 bg-slate-900 transition">
+    <ul className="text-center text-xl p-20">
+      <Link   to="Home">
+      <li className="my-4 py-4 border-b border-[#638ed4] hover:bg-[#638ed4] hover:rounded" onClick={closeNav}>Home</li>
+      </Link>
+      <Link  to="List">
+      <li className="my-4 py-4 border-b border-[#638ed4] hover:bg-[#638ed4] hover:rounded"  onClick={closeNav}>Story</li>
+      </Link>
+      <Link  to="payment">
+      <li className="my-4 py-4 border-b border-[#638ed4] hover:bg-[#638ed4] hover:rounded" onClick={closeNav}>Membership</li>
+      </Link>
+      <Link  to="Blog">
+      <li className="my-4 py-4 border-b border-[#638ed4] hover:bg-[#638ed4] hover:rounded" onClick={closeNav}>Blog</li>
+      </Link>
+     {showSignin()}
+    </ul>
 
-            <NavLink to={'/Payment'}  className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-blue-400 hover: text-dark">Membership</NavLink>
-            <NavLink to={'/Blog'}  className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-blue-400 hover: text-dark">Blog</NavLink>
-          </div>
-        </div>
-      </div>
-      <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-       
-
-        <div className="relative ">
-          <div>
-            {showLoginOptions()}
-          </div>
-
-       
-          
-        </div>
-      </div>
-    </div>
   </div>
+</>
+  return (
+    <div className='bg-secondary-subtle'>
+     <nav>
+       <div className="h-5vh flex justify-between z-50 text-white lg:py-5 px-20 py-4 border-b border-slate-800">
+        <div className="flex items-center flex-1">
+          <h1 className='text-4xl text-black font-bold '>Readnus</h1>
+          <img src="" className="  object-cover" alt="" />
+          {/* <span className="text-3xl font-bold">Logo</span> */}
+        </div>
+        <div className="lg:flex md:flex lg:flex-1 items center justify-end  font-normal hidden">
+          <div className="flex-10">
+          <ul className="flex gap-8 mr-16  mt-1 text-[18px]">
+        <Link to="Home">
+        <li className="hover:text-[#638ed4] transition border-b-2 border-slate-900 hover:border-[#638ed4] cursor-pointer text-dark">Home</li>
+        </Link>
+        <Link to="List">
+        <li className="hover:text-[#638ed4] transition border-b-2 border-slate-900 hover:border-[#638ed4] cursor-pointer text-dark">Story</li>
+        </Link>
+        <Link to="payment">
+        <li className="hover:text-[#638ed4] transition border-b-2 border-slate-900 hover:border-[#638ed4] cursor-pointer text-dark">Membership</li>
+        </Link>
+        <Link to="Blog">
+        <li className="hover:text-[#638ed4] transition border-b-2 border-slate-900 hover:border-[#638ed4] cursor-pointer hover:text-pink-600 text-dark">Blog</li>
+        </Link>
+        {showSignin()}
+      </ul>
 
-  
-</nav>
+          </div>
+        </div>
+        <div>
+          {click && content}
+        </div>
+        <button  className="block sm:hidden transition dark" onClick={handleClick}>
+           {click ? <FaTimes /> : <CiMenuBurger  />}
+        </button>
+       </div>
+    </nav>
 
     </div>
   )

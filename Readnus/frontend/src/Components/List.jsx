@@ -35,9 +35,9 @@ const List = () => {
                             <h1 className='mt-3 mb-3 text-3xl font-bold'>{item.title}</h1>
                         </div>
                         <div>
-                            <h1 className='text-2xl'>{item.description}</h1>
+                            <h1 className=''>{item.description}</h1>
                         </div>
-                             <Link to={'/Details'}> <button className='bg-cyan-500 rounded-3xl mb-3 w-28 mt-3 p-2 '>Read</button></Link>
+                             <Link to={'/Details/'+ item._id}> <button className='bg-blue-300 rounded-3xl mb-3 w-28 mt-3 p-2 '>Read</button></Link>
                         <hr />
                         </div>
 
@@ -51,7 +51,17 @@ const List = () => {
             </div>
             <div className="col-md-3">
                 <div className="card p-5">
-                    <h1>Recommended Topic</h1>
+                    <h1 className='mb-3 text-2xl font-semibold'>Recommended </h1>
+                    <h1 className='mb-3 '>React.js</h1>
+                    <h1 className='mb-3 '>Node.js</h1>
+                    <h1 className='mb-3 '>Express.js</h1>
+                    <h1 className='mb-3 '>JavaScript</h1>
+                    <h1 className='mb-3'>HTML</h1>
+
+                    
+ 
+
+                    
                 </div>
             </div>
         </div>

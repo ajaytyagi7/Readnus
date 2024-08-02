@@ -15,6 +15,7 @@ const UploadBlog = () => {
             title: '',
             date: '',
             details:'',
+            description:'',
 
 
         },
@@ -70,6 +71,8 @@ const UploadBlog = () => {
                         <form onSubmit={BlogForm.handleSubmit} >
                         <input type="text" className='form-control mb-3 mt-5 p-3' id='title' placeholder='Enter Title..' onChange={BlogForm.handleChange} value={BlogForm.values.title}  />
                         <input type="date" className='form-control mb-3 p-3' placeholder='Enter Date' id='date'  onChange={BlogForm.handleChange} value={BlogForm.values.date} />
+                        <input type="text" className='form-control mb-3 p-3' placeholder='Enter description' id='description'  onChange={BlogForm.handleChange} value={BlogForm.values.description} />
+                        
                         <label className='text-2xl font-semibold' htmlFor="">Enter Details</label>
                         <MDEditor
                             value={desc}

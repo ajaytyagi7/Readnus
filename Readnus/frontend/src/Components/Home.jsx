@@ -17,9 +17,9 @@ const Home = () => {
         <h1 className='text-5xl font-semibold text-center mt-3 mb-3'>Latest</h1>
         <div className="row p-4 gap-y-4">
           <div className="col-md-3 ">
-            <div className="card shadow-2xl bg-blue-300 hover:bg-violet-400">
+            <div className="card shadow-2xl bg-slate-300 hover:bg-blue-300">
               <div className="card-body p-3">
-                <h1 className='text-4xl text-center font-semibold '>Topic</h1><hr />
+                <h1 className='text-4xl text-center font-semibold mb-3'>Node.js</h1><hr />
                 <h1 className='text-center mt-3 fs-5'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum repellat commodi qui, in, facilis ipsum adipisci tempore pariatur amet libero, quasi impedit. Aliquam dolore excepturi doloremque officiis numquam? Dolorem unde reprehenderit quidem autem? Pariatur impedit numquam quis fugit odio delectus sit consequatur vitae possimus 
                 </h1>
                 <h1 className='text-center bg-pink-500 mt-3 p-3 font-semibold hover:text-lg'>Read More</h1>
@@ -27,9 +27,9 @@ const Home = () => {
             </div>
           </div>  
           <div className="col-md-3">
-            <div className="card shadow-2xl bg-blue-300">
-              <div className="card-body p-3 hover:bg-violet-400">
-                <h1 className='text-4xl text-center font-semibold '>Topic</h1><hr />
+            <div className="card shadow-2xl bg-slate-300">
+              <div className="card-body p-3 hover:bg-blue-300">
+                <h1 className='text-4xl text-center font-semibold mb-3 '>Angular</h1><hr />
                 <h1 className='text-center mt-3 fs-5'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum repellat commodi qui, in, facilis ipsum adipisci tempore pariatur amet libero, quasi impedit. Aliquam dolore excepturi doloremque officiis numquam? Dolorem unde reprehenderit quidem autem? Pariatur impedit numquam quis fugit odio delectus sit consequatur vitae possimus 
                 </h1>
                 <h1 className='text-center bg-pink-500 mt-3 p-3 font-semibold hover:text-lg'>Read More</h1>
@@ -37,9 +37,9 @@ const Home = () => {
             </div>
           </div>  
           <div className="col-md-3">
-            <div className="card shadow-2xl bg-blue-300">
-              <div className="card-body  p-3 hover:bg-violet-400" >
-                <h1 className='text-4xl text-center font-semibold '>Topic</h1><hr />
+            <div className="card shadow-2xl bg-slate-300">
+              <div className="card-body  p-3 hover:bg-blue-300" >
+                <h1 className='text-4xl text-center font-semibold mb-3'>React.js</h1><hr />
                 <h1 className='text-center mt-3 fs-5'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum repellat commodi qui, in, facilis ipsum adipisci tempore pariatur amet libero, quasi impedit. Aliquam dolore excepturi doloremque officiis numquam? Dolorem unde reprehenderit quidem autem? Pariatur impedit numquam quis fugit odio delectus sit consequatur vitae possimus 
                 </h1>
                 <h1 className='text-center bg-pink-500 mt-3 p-3 font-semibold hover:text-lg'>Read More</h1>
@@ -47,9 +47,9 @@ const Home = () => {
             </div>
           </div>  
           <div className="col-md-3">
-            <div className="card shadow-2xl bg-blue-300">
-              <div className="card-body p-3 hover:bg-violet-400">
-                <h1 className='text-4xl text-center font-semibold '>Topic</h1><hr />
+            <div className="card shadow-2xl bg-slate-300">
+              <div className="card-body p-3 hover:bg-blue-300">
+                <h1 className='text-4xl text-center font-semibold mb-3'>Javascript</h1><hr />
                 <h1 className='text-center mt-3 fs-5'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum repellat commodi qui, in, facilis ipsum adipisci tempore pariatur amet libero, quasi impedit. Aliquam dolore excepturi doloremque officiis numquam? Dolorem unde reprehenderit quidem autem? Pariatur impedit numquam quis fugit odio delectus sit consequatur vitae possimus 
                 </h1>
                 <h1 className='text-center bg-pink-500 mt-3 p-3 font-semibold hover:text-lg'>Read More</h1>
